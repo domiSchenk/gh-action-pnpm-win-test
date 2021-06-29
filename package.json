@@ -1,0 +1,25 @@
+{
+  "name": "gh-action-pnpm-win-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domiSchenk/gh-action-pnpm-win-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domiSchenk/gh-action-pnpm-win-test/issues"
+  },
+  "homepage": "https://github.com/domiSchenk/gh-action-pnpm-win-test#readme",
+  "dependencies": {
+    "@angular/animations": "^12.1.0",
+    "@angular/cdk": "^12.1.0",
+    "@angular/common": "^12.1.0",
+    "@angular/core": "^12.1.0"
+  }
+}

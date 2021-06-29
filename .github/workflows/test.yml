@@ -1,0 +1,65 @@
+name: "test-on-pr"
+on: [pull_request]
+
+jobs:
+  test-tauri:
+    strategy:
+      fail-fast: false
+      matrix:
+       # platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [windows-latest]
+        node-version: [14]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - name: Get pnpm cache directory
+      if: matrix.platform == 'windows-latest'
+      id: pnpm-cache-dir-path
+      run: echo "::set-output name=dir::${HOME}\.pnpm-store\"
+
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Cache pnpm modules <Windows>
+      if: matrix.platform == 'windows-latest'
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-pnpm-modules
+      with:
+        path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+    - name: Cache pnpm modules <Linux|MacOs>
+      if: matrix.platform != 'windows-latest'
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-pnpm-modules
+      with:
+        # pnpm cache files are stored in `~/.pnpm-store` on Linux/macOS
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
+
+
+    # - name: Cache pnpm
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ~/.pnpm-store
+    #     key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+
+    - name: install pnpm
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 6.9.1
+
+
+
+    - name: install app dependencies
+      run: pnpm install
