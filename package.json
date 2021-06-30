@@ -17,9 +17,8 @@
   },
   "homepage": "https://github.com/domiSchenk/gh-action-pnpm-win-test#readme",
   "dependencies": {
-    "@angular/animations": "^12.1.0",
-    "@angular/cdk": "^12.1.0",
-    "@angular/common": "^12.1.0",
-    "@angular/core": "^12.1.0"
+    "dayjs": "^1.10.5",
+    "rxjs": "^7.1.0",
+    "tippy.js": "^6.3.1"
   }
 }
