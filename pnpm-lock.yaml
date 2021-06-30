@@ -1,69 +1,37 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@angular/animations': ^12.1.0
-  '@angular/cdk': ^12.1.0
-  '@angular/common': ^12.1.0
-  '@angular/core': ^12.1.0
+  dayjs: ^1.10.5
+  rxjs: ^7.1.0
+  tippy.js: ^6.3.1
 
 dependencies:
-  '@angular/animations': 12.1.0_@angular+core@12.1.0
-  '@angular/cdk': 12.1.0_82519688281199bef51c6e31e9df92e3
-  '@angular/common': 12.1.0_@angular+core@12.1.0
-  '@angular/core': 12.1.0
+  dayjs: 1.10.5
+  rxjs: 7.1.0
+  tippy.js: 6.3.1
 
 packages:
 
-  /@angular/animations/12.1.0_@angular+core@12.1.0:
-    resolution: {integrity: sha512-I81M9nptMWHgbBUfJKyjQghNplV/aLvjxKEo3nTqf33/9G+nqMU2S2mAG8X8q/R/199R7DtJOmjqdmGkDgT8BQ==}
-    engines: {node: ^12.14.1 || >=14.0.0}
-    peerDependencies:
-      '@angular/core': 12.1.0
+  /@popperjs/core/2.9.2:
+    resolution: {integrity: sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==}
+    dev: false
+
+  /dayjs/1.10.5:
+    resolution: {integrity: sha512-BUFis41ikLz+65iH6LHQCDm4YPMj5r1YFLdupPIyM4SGcXMmtiLQ7U37i+hGS8urIuqe7I/ou3IS1jVc4nbN4g==}
+    dev: false
+
+  /rxjs/7.1.0:
+    resolution: {integrity: sha512-gCFO5iHIbRPwznl6hAYuwNFld8W4S2shtSJIqG27ReWXo9IWrCyEICxUA+6vJHwSR/OakoenC4QsDxq50tzYmw==}
     dependencies:
-      '@angular/core': 12.1.0
-      tslib: 2.3.0
+      tslib: 2.1.0
     dev: false
 
-  /@angular/cdk/12.1.0_82519688281199bef51c6e31e9df92e3:
-    resolution: {integrity: sha512-AkkhEveUDwblJyTd1NvuP7eH7Pwj14hyMmMnzfKBcaImvsSXK/z0T58wzp5vVYUtAQc05MuojwfsJQCev5QwNg==}
-    peerDependencies:
-      '@angular/common': ^12.0.0 || ^13.0.0-0
-      '@angular/core': ^12.0.0 || ^13.0.0-0
-      rxjs: ^6.5.3
+  /tippy.js/6.3.1:
+    resolution: {integrity: sha512-JnFncCq+rF1dTURupoJ4yPie5Cof978inW6/4S6kmWV7LL9YOSEVMifED3KdrVPEG+Z/TFH2CDNJcQEfaeuQww==}
     dependencies:
-      '@angular/common': 12.1.0_@angular+core@12.1.0
-      '@angular/core': 12.1.0
-      tslib: 2.3.0
-    optionalDependencies:
-      parse5: 5.1.1
+      '@popperjs/core': 2.9.2
     dev: false
 
-  /@angular/common/12.1.0_@angular+core@12.1.0:
-    resolution: {integrity: sha512-DsnH0rIuhEFhRdQkhr4Bb7YiNTCG0+PbmpA1SCzU3jqeSV1Zr0Q9ZoDf/Ab8+x3vGmdTJhcnncoxrKdzfRHQKQ==}
-    engines: {node: ^12.14.1 || >=14.0.0}
-    peerDependencies:
-      '@angular/core': 12.1.0
-      rxjs: ^6.5.3
-    dependencies:
-      '@angular/core': 12.1.0
-      tslib: 2.3.0
-    dev: false
-
-  /@angular/core/12.1.0:
-    resolution: {integrity: sha512-awrCla6j4U0CU86q8nwR49GiULo3XhMcgooPgRBMjN1aHTDXKacSC9hk2nXkipC9VjuhybUVswuW4/et6d4RZQ==}
-    engines: {node: ^12.14.1 || >=14.0.0}
-    peerDependencies:
-      rxjs: ^6.5.3
-      zone.js: ~0.11.4
-    dependencies:
-      tslib: 2.3.0
-    dev: false
-
-  /parse5/5.1.1:
-    resolution: {integrity: sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==}
-    dev: false
-    optional: true
-
-  /tslib/2.3.0:
-    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+  /tslib/2.1.0:
+    resolution: {integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==}
     dev: false
